@@ -6,7 +6,7 @@
     */
    class Dir
    {
-        private $dirlist;
+        private $_dirlist = array();
 
         function __construct()
         {
@@ -17,7 +17,7 @@
             // just list all the directories in a directory :)
             $path_list = glob($path.'/*', GLOB_ONLYDIR);
             
-            $this->dirlist[$path] = glob($path.'/*');          
+            $this->_dirlist[$path] = glob($path.'/*');          
             
             if ( empty ($path_list) )
             {
@@ -42,7 +42,7 @@
 
         public function getDirlist()
         {
-        	return $this->dirlist;
+        	return $this->_dirlist;
         }
    }
 
