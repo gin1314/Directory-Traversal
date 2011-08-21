@@ -4,9 +4,9 @@
    {
    	    private $dirlist;
 
-   		function __construct()
-   		{
-   		}
+        function __construct()
+        {
+        }
 
         public function traverse($path = '.')
         {
@@ -43,6 +43,6 @@
 
    $dir = new Dir;
    $dir->traverse('.');
-   var_dump($dir->getDirlist())
+   var_dump($dir->getDirlist());
 
 ?>
