@@ -1,5 +1,9 @@
 <?php
 
+   /**
+    * @author Eugene Santos
+    * @email eugene.santos13@gmail.com
+    */
    class Dir
    {
         private $dirlist;
@@ -10,7 +14,7 @@
 
         public function traverse($path = '.')
         {
-    
+            // just list all the directories in a directory :)
             $path_list = glob($path.'/*', GLOB_ONLYDIR);
             
             $this->dirlist[$path] = glob($path.'/*');          
@@ -25,6 +29,7 @@
             	{
             		if ($path !== '.') 
             		{
+            			//just the child dirs
             			$this->traverse($path.'/'. substr($value, strlen($path)+1 ) );
             		} 
             		else 
@@ -41,8 +46,9 @@
         }
    }
 
+   echo '<pre>';
    $dir = new Dir;
    $dir->traverse('.');
-   var_dump($dir->getDirlist());
+   print_r($dir->getDirlist());
 
 ?>
