@@ -2,7 +2,7 @@
 
    class Dir
    {
-   	    private $dirlist;
+        private $dirlist;
 
         function __construct()
         {
